@@ -76,7 +76,7 @@ const UnvelingLoadingPage = () => {
     if (isLoadingUnveilingBefore) {
       const custleDefenderTimer = setTimeout(() => {
 
-        const custleDestination = isAppWasOpened ? 'OnbOfTheUnveiling' : 'UnveilingHomeScreen';
+        const custleDestination = isAppWasOpened ? 'AviaOnboardingMindScreen' : 'AviaHomeMindScreen';
 
         navigation.replace(custleDestination);
       }, 5555);

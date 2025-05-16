@@ -1,14 +1,14 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import UnveilingHomeScreen from './src/screens/UnveilingHomeScreen';
+import AviaHomeMindScreen from './src/screens/AviaHomeMindScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { UserProvider, UserContext } from './src/context/UserContext';
 import { Provider } from 'react-redux';
 import store from './src/redux/store';
 import UnvelingLoadingPage from './src/screens/UnvelingLoadingPage';
-import OnboardingOfTheUnveilingScreen from './src/screens/OnboardingOfTheUnveilingScreen';
+import AviaOnboMindScreen from './src/screens/AviaOnboMindScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -29,10 +29,10 @@ const CastleDefenderStack = () => {
 const AppNavigator = () => {
   return (
     <NavigationContainer>
-        <Stack.Navigator initialRouteName={'LoadUnveilingApp'}>
-          <Stack.Screen name="OnbOfTheUnveiling" component={OnboardingOfTheUnveilingScreen} options={{ headerShown: false }} />
-          <Stack.Screen name="LoadUnveilingApp" component={UnvelingLoadingPage} options={{ headerShown: false }} />
-          <Stack.Screen name="UnveilingHomeScreen" component={UnveilingHomeScreen} options={{ headerShown: false }} />
+        <Stack.Navigator initialRouteName={'AviaLoadingMindScreen'}>
+          <Stack.Screen name="AviaOnboardingMindScreen" component={AviaOnboMindScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="AviaLoadingMindScreen" component={UnvelingLoadingPage} options={{ headerShown: false }} />
+          <Stack.Screen name="AviaHomeMindScreen" component={AviaHomeMindScreen} options={{ headerShown: false }} />
         </Stack.Navigator>
     </NavigationContainer>
   );

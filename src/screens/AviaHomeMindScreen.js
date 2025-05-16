@@ -52,7 +52,7 @@ const unvBottomButtons = [
   },
 ]
 
-const UnveilingHomeScreen = () => {
+const AviaHomeMindScreen = () => {
   const [dimensions, setDimensions] = useState(Dimensions.get('window'));
   const [unveilingScreenNow, setUnveilingScreenNow] = useState('Home');
   const [isFullScreenImage, setIsFullScreenImage] = useState(false);
@@ -396,4 +396,4 @@ const UnveilingHomeScreen = () => {
 const unveilingMainStyles = (dimensions) => StyleSheet.create({
 });
 
-export default UnveilingHomeScreen;
+export default AviaHomeMindScreen;
