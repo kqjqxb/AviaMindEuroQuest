@@ -7,17 +7,17 @@ export const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const unveilingLoading = async () => {
+    const aviaLoadingUser = async () => {
       try {
-        const storedUnveilingUser = await AsyncStorage.getItem('currentUser');
-        if (storedUnveilingUser) {
-          setUser(JSON.parse(storedUnveilingUser));
+        const storedAviaLoadedUser = await AsyncStorage.getItem('currentUser');
+        if (storedAviaLoadedUser) {
+          setUser(JSON.parse(storedAviaLoadedUser));
         }
       } catch (error) {
-        console.error('Error User Storage:', error);
+        console.error('load Avia user was crashed by error:', error);
       }
     };
-    unveilingLoading();
+    aviaLoadingUser();
   }, []);
 
   return (

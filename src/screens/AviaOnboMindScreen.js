@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { View, Animated, Text, TouchableOpacity, Dimensions, Image, SafeAreaView } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, Text, TouchableOpacity, Dimensions, Image } from 'react-native';
 import aviaDataOnb from '../components/aviaDataOnb';
 import { useNavigation } from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';

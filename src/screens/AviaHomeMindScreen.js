@@ -86,7 +86,7 @@ const AviaHomeMindScreen = () => {
       flex: 1,
       width: dimensions.width,
       height: dimensions.height,
-      backgroundColor: '#04050E',
+      backgroundColor: 'rgba(6, 7, 7, 1)',
     }}>
       {unveilingScreenNow === 'Home' ? (
         <SafeAreaView style={{

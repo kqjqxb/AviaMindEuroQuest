@@ -1,8 +1,8 @@
 import React from 'react';
-import CastleDefenderStack from './StackNavigator';
+import AviaMindStack from './StackNavigator';
 
 function App() {
-  return <CastleDefenderStack />;
+  return <AviaMindStack />;
 }
 
 export default App;

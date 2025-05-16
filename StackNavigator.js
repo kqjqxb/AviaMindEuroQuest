@@ -7,12 +7,12 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { UserProvider, UserContext } from './src/context/UserContext';
 import { Provider } from 'react-redux';
 import store from './src/redux/store';
-import UnvelingLoadingPage from './src/screens/UnvelingLoadingPage';
+import AviaLoadAppScreen from './src/screens/AviaLoadAppScreen';
 import AviaOnboMindScreen from './src/screens/AviaOnboMindScreen';
 
 const Stack = createNativeStackNavigator();
 
-const CastleDefenderStack = () => {
+const AviaMindStack = () => {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <Provider store={store}>
@@ -31,7 +31,7 @@ const AppNavigator = () => {
     <NavigationContainer>
         <Stack.Navigator initialRouteName={'AviaLoadingMindScreen'}>
           <Stack.Screen name="AviaOnboardingMindScreen" component={AviaOnboMindScreen} options={{ headerShown: false }} />
-          <Stack.Screen name="AviaLoadingMindScreen" component={UnvelingLoadingPage} options={{ headerShown: false }} />
+          <Stack.Screen name="AviaLoadingMindScreen" component={AviaLoadAppScreen} options={{ headerShown: false }} />
           <Stack.Screen name="AviaHomeMindScreen" component={AviaHomeMindScreen} options={{ headerShown: false }} />
         </Stack.Navigator>
     </NavigationContainer>
@@ -39,4 +39,4 @@ const AppNavigator = () => {
 };
 
 
-export default CastleDefenderStack;
+export default AviaMindStack;
