@@ -20,35 +20,35 @@ import LinearGradient from 'react-native-linear-gradient';
 import castlesData from '../components/castlesData';
 import residencesData from '../components/residencesData';
 import churchesData from '../components/churchesData';
-import UnveilingPlanScreen from './UnveilingPlanScreen';
+import AviaSavedBlScreen from './AviaSavedBlScreen';
 import UnveilingBayernSettingsScreen from './UnveilingBayernSettingsScreen';
 import UnveilingCastleDefenderScreen from './UnveilingCastleDefenderScreen';
 
 const unvBottomButtons = [
   {
     id: 2,
-    custleDefenderScreenNT: 'Castle Defender',
-    custleDefenderImage: require('../assets/icons/homeBottomUnvIcons/unvDefenderIcon.png'),
+    custleDefenderScreenNT: 'Saved Blogs',
+    custleDefenderImage: require('../assets/icons/aviaPageIcons/savedAviaIcon.png'),
   },
   {
     id: 4,
     custleDefenderScreenNT: 'Plan Bayern Trip',
-    custleDefenderImage: require('../assets/icons/homeBottomUnvIcons/unvFestivalsIcon.png'),
+    custleDefenderImage: require('../assets/icons/aviaPageIcons/questPassportIcon.png'),
   },
   {
     id: 1,
     custleDefenderScreenNT: 'Home',
-    custleDefenderImage: require('../assets/icons/homeBottomUnvIcons/unvHomeIcon.png'),
+    custleDefenderImage: require('../assets/icons/aviaPageIcons/mainCentralIcon.png'),
   },
   {
     id: 5,
     custleDefenderScreenNT: 'Bayern landmarks',
-    custleDefenderImage: require('../assets/icons/homeBottomUnvIcons/unvLandmarksIcon.png'),
+    custleDefenderImage: require('../assets/icons/aviaPageIcons/aviablogIcon.png'),
   },
   {
     id: 3,
     custleDefenderScreenNT: 'Unveiling Settings',
-    custleDefenderImage: require('../assets/icons/homeBottomUnvIcons/unvPlanTripIcon.png'),
+    custleDefenderImage: require('../assets/icons/aviaPageIcons/aviaprofileIcon.png'),
   },
 ]
 
@@ -210,7 +210,7 @@ const AviaHomeMindScreen = () => {
               width: dimensions.width * 0.91,
               height: dimensions.height * 0.55,
               borderRadius: dimensions.width * 0.1,
-              overflow: 'hidden', 
+              overflow: 'hidden',
               position: 'relative',
             }}
           >
@@ -344,50 +344,82 @@ const AviaHomeMindScreen = () => {
 
 
         </SafeAreaView>
-      ) : unveilingScreenNow === 'Castle Defender' ? (
-        <UnveilingCastleDefenderScreen setUnveilingScreenNow={setUnveilingScreenNow} />
+      ) : unveilingScreenNow === 'Saved Blogs' ? (
+        <AviaSavedBlScreen setUnveilingScreenNow={setUnveilingScreenNow} />
       ) : unveilingScreenNow === 'Bayern landmarks' ? (
         <UnveilingBayernLandmarksScreen setUnveilingScreenNow={setUnveilingScreenNow} />
       ) : unveilingScreenNow === 'Plan Bayern Trip' ? (
-        <UnveilingPlanScreen setUnveilingScreenNow={setUnveilingScreenNow} />
+        <AviaSavedBlScreen setUnveilingScreenNow={setUnveilingScreenNow} />
       ) : unveilingScreenNow === 'Unveiling Settings' ? (
         <UnveilingBayernSettingsScreen setUnveilingScreenNow={setUnveilingScreenNow} />
       ) : null}
 
       <View style={{
-        paddingHorizontal: dimensions.width * 0.05,
         position: 'absolute',
         bottom: '3%',
-        height: dimensions.width * 0.18,
-        width: '95%',
-        justifyContent: 'space-between',
-        borderWidth: dimensions.width * 0.002,
-        alignSelf: 'center',
-        flexDirection: 'row',
+        height: dimensions.width * 0.21,
+        width: dimensions.width * 0.9,
         alignItems: 'center',
-        borderRadius: dimensions.width * 0.035,
+        justifyContent: 'center',
+        alignSelf: 'center',
+
       }}>
-        {unvBottomButtons.map((custleDefenderButtonForPages, index) => (
-          <TouchableOpacity
-            key={index}
-            onPress={() => {
-              setUnveilingScreenNow(custleDefenderButtonForPages.custleDefenderScreenNT);
-            }}
-            style={{
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}>
-            <Image
-              source={custleDefenderButtonForPages.custleDefenderImage}
-              style={{
-                height: dimensions.height * 0.035,
-                opacity: unveilingScreenNow === custleDefenderButtonForPages.custleDefenderScreenNT ? 1 : 0.4,
-                width: dimensions.height * 0.035,
+        <LinearGradient
+          style={{ position: 'absolute', left: 0, right: 0, top: 0, bottom: 0, borderRadius: dimensions.width * 0.2 }}
+          colors={['#454545', '#848484']}
+          start={{ x: 0.5, y: 1 }}
+          end={{ x: 0.5, y: 0 }}
+        />
+
+        <View style={{
+          width: '99%',
+          height: '96%',
+
+          paddingHorizontal: dimensions.width * 0.03,
+          justifyContent: 'space-between',
+          borderWidth: dimensions.width * 0.002,
+          alignSelf: 'center',
+          flexDirection: 'row',
+          alignItems: 'center',
+          borderRadius: dimensions.width * 0.3,
+          backgroundColor: '#151311',
+        }}>
+
+
+          {unvBottomButtons.map((custleDefenderButtonForPages, index) => (
+            <TouchableOpacity
+              key={index}
+              onPress={() => {
+                setUnveilingScreenNow(custleDefenderButtonForPages.custleDefenderScreenNT);
               }}
-              resizeMode="contain"
-            />
-          </TouchableOpacity>
-        ))}
+              style={{
+                justifyContent: 'center',
+                alignItems: 'center',
+                padding: dimensions.width * 0.03,
+                borderRadius: dimensions.width * 0.1,
+                backgroundColor: unveilingScreenNow === custleDefenderButtonForPages.custleDefenderScreenNT ? 'transparent' : '#1F1F1F',
+                borderWidth: dimensions.width * 0.003,
+                borderColor: unveilingScreenNow !== custleDefenderButtonForPages.custleDefenderScreenNT ? '#4A4A4A' : '#FB7574',
+              }}>
+              {unveilingScreenNow === custleDefenderButtonForPages.custleDefenderScreenNT && (
+                <LinearGradient
+                  style={{ position: 'absolute', left: 0, right: 0, top: 0, bottom: 0, borderRadius: dimensions.width * 0.2 }}
+                  colors={['#9F0D0B', '#EF3A38']}
+                  start={{ x: 0.5, y: 1 }}
+                  end={{ x: 0.5, y: 0 }}
+                />
+              )}
+              <Image
+                source={custleDefenderButtonForPages.custleDefenderImage}
+                style={{
+                  height: dimensions.height * 0.04,
+                  width: dimensions.height * 0.04,
+                }}
+                resizeMode="contain"
+              />
+            </TouchableOpacity>
+          ))}
+        </View>
       </View>
     </View>
   );
