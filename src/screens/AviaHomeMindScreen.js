@@ -23,6 +23,7 @@ import churchesData from '../components/churchesData';
 import AviaSavedBlScreen from './AviaSavedBlScreen';
 import UnveilingBayernSettingsScreen from './UnveilingBayernSettingsScreen';
 import UnveilingCastleDefenderScreen from './UnveilingCastleDefenderScreen';
+import AviaCountriesBlogScreen from './AviaCountriesBlogScreen';
 
 const unvBottomButtons = [
   {
@@ -42,7 +43,7 @@ const unvBottomButtons = [
   },
   {
     id: 5,
-    custleDefenderScreenNT: 'Bayern landmarks',
+    custleDefenderScreenNT: 'Countries Blog',
     custleDefenderImage: require('../assets/icons/aviaPageIcons/aviablogIcon.png'),
   },
   {
@@ -346,8 +347,8 @@ const AviaHomeMindScreen = () => {
         </SafeAreaView>
       ) : unveilingScreenNow === 'Saved Blogs' ? (
         <AviaSavedBlScreen setUnveilingScreenNow={setUnveilingScreenNow} />
-      ) : unveilingScreenNow === 'Bayern landmarks' ? (
-        <UnveilingBayernLandmarksScreen setUnveilingScreenNow={setUnveilingScreenNow} />
+      ) : unveilingScreenNow === 'Countries Blog' ? (
+        <AviaCountriesBlogScreen setUnveilingScreenNow={setUnveilingScreenNow} />
       ) : unveilingScreenNow === 'Plan Bayern Trip' ? (
         <AviaSavedBlScreen setUnveilingScreenNow={setUnveilingScreenNow} />
       ) : unveilingScreenNow === 'Unveiling Settings' ? (
