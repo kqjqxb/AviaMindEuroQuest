@@ -12,7 +12,6 @@ import {
   Share,
 } from 'react-native';
 
-import UnveilingBayernLandmarksScreen from './UnveilingBayernLandmarksScreen';
 import ReactNativeHapticFeedback from "react-native-haptic-feedback";
 import { ChevronRightIcon } from 'react-native-heroicons/solid';
 import LinearGradient from 'react-native-linear-gradient';
@@ -21,9 +20,8 @@ import castlesData from '../components/castlesData';
 import residencesData from '../components/residencesData';
 import churchesData from '../components/churchesData';
 import AviaSavedBlScreen from './AviaSavedBlScreen';
-import UnveilingBayernSettingsScreen from './UnveilingBayernSettingsScreen';
-import UnveilingCastleDefenderScreen from './UnveilingCastleDefenderScreen';
 import AviaCountriesBlogScreen from './AviaCountriesBlogScreen';
+import AviaUserProfileScreen from './AviaUserProfileScreen';
 
 const unvBottomButtons = [
   {
@@ -48,7 +46,7 @@ const unvBottomButtons = [
   },
   {
     id: 3,
-    custleDefenderScreenNT: 'Unveiling Settings',
+    custleDefenderScreenNT: 'Avia User Profile',
     custleDefenderImage: require('../assets/icons/aviaPageIcons/aviaprofileIcon.png'),
   },
 ]
@@ -351,8 +349,8 @@ const AviaHomeMindScreen = () => {
         <AviaCountriesBlogScreen setUnveilingScreenNow={setUnveilingScreenNow} />
       ) : unveilingScreenNow === 'Plan Bayern Trip' ? (
         <AviaSavedBlScreen setUnveilingScreenNow={setUnveilingScreenNow} />
-      ) : unveilingScreenNow === 'Unveiling Settings' ? (
-        <UnveilingBayernSettingsScreen setUnveilingScreenNow={setUnveilingScreenNow} />
+      ) : unveilingScreenNow === 'Avia User Profile' ? (
+        <AviaUserProfileScreen setUnveilingScreenNow={setUnveilingScreenNow} />
       ) : null}
 
       <View style={{
